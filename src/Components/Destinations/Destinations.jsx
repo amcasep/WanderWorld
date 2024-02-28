@@ -71,7 +71,7 @@ const destinations = [
         location: 'Canada',
         rating: 4.9
     }
-   
+
 ]
 
 const Destinations = () => {
@@ -107,19 +107,23 @@ const Destinations = () => {
                     </ul>
                 </div>
                 <div className="destinationContainer grid">
-                    
-                    <div className="singleDestination">
-                        <div className="imgDiv">
-                            <img src={image1} alt="Destination image" />
-                            <div className="descInfo flex">
-                                <div className="text">
-                                    <span className="name">Ciudad Perdida</span>
-                                    <p className="flex"><TiLocation className='icon' /> Colombia</p>
+                    {destinations.map(des => {
+                        return (
+                            <div className="singleDestination" key={des.id}>
+                                <div className="imgDiv">
+                                    <img src={des.img} alt="Destination image" />
+                                    <div className="descInfo flex">
+                                        <div className="text">
+                                            <span className="name">{des.name}</span>
+                                            <p className="flex"><TiLocation className='icon' />{des.location}</p>
+                                        </div>
+                                        <span className="rating">{des.rating}</span>
+                                    </div>
                                 </div>
-                                <span className="rating">4.6</span>
                             </div>
-                        </div>
-                    </div>
+                        )
+                    })}
+
                 </div>
             </div>
         </div>
