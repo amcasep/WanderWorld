@@ -1,0 +1,30 @@
+:root {
+  --primaryColor: hsl(14, 90%, 53%);
+  --primaryColorLight: hsl(14, 96%, 91%);
+  --bgColor: hsl(0, 0%, 100%);
+  --formColor: hsl(20, 42%, 87%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --greyText: hsl(0, 0%, 51%);
+  --inputColor: hsl(330, 12%, 97%);
+  --cardColor: hsl(300, 3%, 94%);
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.6rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+  --borderRadius: 3rem;
+}
+
+.Subscribe .secContainer .textDiv h4 {
+  font-size: var(--h2FontSize);
+  color: var(--blackColor);
+}
+.Subscribe .secContainer .textDiv p {
+  padding: 1rem 0;
+}
+.Subscribe .secContainer .textDiv .btn {
+  padding: 0.5rem 2rem;
+}/*# sourceMappingURL=Subscribe.css.map */
