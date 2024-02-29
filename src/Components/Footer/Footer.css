@@ -1,0 +1,77 @@
+:root {
+  --primaryColor: hsl(14, 90%, 53%);
+  --primaryColorLight: hsl(14, 96%, 91%);
+  --bgColor: hsl(0, 0%, 100%);
+  --formColor: hsl(20, 42%, 87%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --greyText: hsl(0, 0%, 51%);
+  --inputColor: hsl(330, 12%, 97%);
+  --cardColor: hsl(300, 3%, 94%);
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.6rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+  --borderRadius: 3rem;
+}
+
+.Footer {
+  background: var(--primaryColorLight);
+  padding: 2rem 0;
+}
+.Footer .secContainer {
+  gap: 1.5rem;
+  text-align: center;
+  align-items: flex-start;
+}
+.Footer .secContainer .logoDiv .footerLogo {
+  display: flex;
+  color: var(--blackColor);
+  font-weight: 500;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+}
+.Footer .secContainer .logoDiv .footerLogo .icon {
+  font-size: 25px;
+  color: var(--blackColor);
+}
+.Footer .secContainer .logoDiv .socials {
+  gap: 0.5rem;
+  margin: auto;
+  justify-content: center;
+}
+.Footer .secContainer .logoDiv .socials .icon {
+  font-size: 25px;
+  background: var(--primaryColor);
+  border-radius: 50%;
+  padding: 8px;
+  color: var(--whiteColor);
+}
+.Footer .secContainer .logoDiv .socials .icon:hover {
+  background: var(--primaryColorLight);
+}
+.Footer .secContainer .logoDiv .footerLinks {
+  display: grid;
+  row-gap: 0.2rem;
+}
+.Footer .secContainer .logoDiv .footerLinks .linkTitle {
+  padding: 0.5rem;
+  color: var(--blackColor);
+  font-weight: 700;
+}
+.Footer .secContainer .logoDiv .footerLinks li:hover {
+  transform: translate(10px);
+}
+.Footer .secContainer .logoDiv .footerLinks li:hover a {
+  color: var(--primaryColor);
+}
+.Footer .secContainer .logoDiv .footerLinks a, .Footer .secContainer .logoDiv .footerLinks .phone, .Footer .secContainer .logoDiv .footerLinks .email {
+  color: var(--blackColor);
+  font-size: 13px;
+  font-weight: 500;
+}/*# sourceMappingURL=Footer.css.map */
