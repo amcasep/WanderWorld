@@ -1,5 +1,5 @@
 import './Home.css'
-import video from '../../Assets/video.mp4'
+import video from '../../assets/video.mp4'
 import { AiOutlineSwapRight } from "react-icons/ai";
 const Home = () => {
     return (
