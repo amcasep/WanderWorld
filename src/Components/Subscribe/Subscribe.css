@@ -18,6 +18,16 @@
   --borderRadius: 3rem;
 }
 
+.Subscribe .secContainer .imgDiv {
+  height: 250px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.Subscribe .secContainer .imgDiv img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .Subscribe .secContainer .textDiv h4 {
   font-size: var(--h2FontSize);
   color: var(--blackColor);
