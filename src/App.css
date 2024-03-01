@@ -34,12 +34,6 @@ body {
   align-items: center;
 }
 
-.grid {
-  display: grid;
-  align-items: center;
-  gap: 1.5rem;
-}
-
 p {
   font-size: var(--smallFontSize);
 }
@@ -68,7 +62,6 @@ img, video {
 
 .btn {
   border: none;
-  outline: none;
   cursor: pointer;
   border-radius: var(--borderRadius);
   padding: 0.8rem 1rem;
@@ -126,9 +119,9 @@ img, video {
   border-radius: var(--borderRadius);
 }
 
-@media screen and (min-width: 840px) {
+@media screen and (min-width: 768px) {
   .container {
-    width: 70%;
+    width: 80%;
     margin: auto;
   }
 }/*# sourceMappingURL=App.css.map */

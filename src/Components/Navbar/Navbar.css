@@ -91,6 +91,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .navBar {
+    padding: 1.5rem 4rem;
+  }
   .navBar .closeIcon, .navBar .menuIcon {
     display: none;
   }
@@ -105,11 +108,6 @@
   .navBar .menu ul li:hover {
     color: var(--primaryColor);
     border-bottom: 1.5px solid var(--primaryColor);
-  }
-}
-@media screen and (min-width: 840px) {
-  .navBar {
-    padding: 1.5rem 4rem;
   }
 }
 @media screen and (min-width: 1240px) {

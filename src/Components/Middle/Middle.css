@@ -45,7 +45,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (min-width: 840) {
+@media screen and (min-width: 1080px) {
   .middle .secContainer .grid {
     grid-template-columns: repeat(4, 1fr);
   }

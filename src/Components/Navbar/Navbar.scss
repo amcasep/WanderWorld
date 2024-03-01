@@ -107,6 +107,7 @@
 
 @media screen and (min-width: 768px) {
     .navBar {
+        padding: 1.5rem 4rem;
         .closeIcon, .menuIcon {
             display: none;
         }
@@ -128,11 +129,11 @@
         }
     }
 }
-@media screen and (min-width: 840px) {
-    .navBar{
-        padding: 1.5rem 4rem;
-    }
-}
+// @media screen and (min-width: 840px) {
+//     .navBar{
+//         padding: 1.5rem 4rem;
+//     }
+// }
 @media screen and (min-width: 1240px) {
     .navBar{
         .menu {
