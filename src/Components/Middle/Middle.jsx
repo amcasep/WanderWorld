@@ -2,7 +2,7 @@ import './Middle.css'
 
 const Middle = () => {
     return (
-        <div className="middle section">
+        <div className="middle section container">
             <div className="secContainer">
                 <div className="grid">
                 <span className="flex">

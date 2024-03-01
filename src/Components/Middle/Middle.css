@@ -18,15 +18,12 @@
   --borderRadius: 3rem;
 }
 
-.middle {
-  width: 100%;
-}
 .middle .secContainer .grid {
+  display: grid;
+  justify-content: center;
   padding: 3rem;
   background-color: var(--primaryColorLight);
   border-radius: var(--borderRadius);
-  justify-content: center;
-  margin: auto;
   gap: 2rem;
 }
 .middle .secContainer .grid span {
@@ -41,4 +38,15 @@
 .middle .secContainer .grid span p {
   opacity: 0.8;
   max-width: 80px;
+}
+
+@media screen and (min-width: 480px) {
+  .middle .secContainer .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 840) {
+  .middle .secContainer .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }/*# sourceMappingURL=Middle.css.map */

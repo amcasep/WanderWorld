@@ -100,12 +100,16 @@
   }
   .navBar .menu ul li {
     font-weight: 500;
-    padding: 1rem 0;
     cursor: pointer;
   }
   .navBar .menu ul li:hover {
     color: var(--primaryColor);
     border-bottom: 1.5px solid var(--primaryColor);
+  }
+}
+@media screen and (min-width: 840px) {
+  .navBar {
+    padding: 1.5rem 4rem;
   }
 }
 @media screen and (min-width: 1240px) {
