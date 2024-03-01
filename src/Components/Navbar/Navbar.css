@@ -26,20 +26,25 @@
   padding: 1.5rem 2rem;
   position: fixed;
   border-bottom: 1.5px solid rgb(211, 211, 211);
+  background: rgba(255, 255, 255, 0.75);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.733);
 }
 .navBar .logoDiv {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 .navBar .logoDiv span {
-  color: var(--blackColor);
   font-size: var(--h3FontSize);
-  justify-content: center;
+  color: var(--primaryColor);
+  font-weight: 500;
+}
+.navBar .menuIcon {
+  font-size: var(--h1FontSize);
+}
+.navBar .menuIcon:hover {
+  color: var(--primaryColor);
 }
 @media screen and (max-width: 767px) {
   .navBar .menu {
@@ -69,12 +74,6 @@
     border-bottom: 1.5px solid var(--primaryColor);
   }
 }
-.navBar .menuIcon, .navBar .closeIcon {
-  font-size: var(--h1FontSize);
-}
-.navBar .menuIcon:hover, .navBar .closeIcon:hover {
-  color: var(--primaryColor);
-}
 .navBar .closeIcon {
   position: absolute;
   bottom: -15px;
@@ -82,7 +81,35 @@
   right: 50%;
   left: 50%;
   transform: translate(-50%);
+  font-size: var(--h1FontSize);
+}
+.navBar .closeIcon:hover {
+  color: var(--primaryColor);
 }
 .navBar .showNavBar {
   top: 8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navBar .closeIcon, .navBar .menuIcon {
+    display: none;
+  }
+  .navBar .menu ul {
+    display: flex;
+    gap: 1rem;
+  }
+  .navBar .menu ul li {
+    font-weight: 500;
+    padding: 1rem 0;
+    cursor: pointer;
+  }
+  .navBar .menu ul li:hover {
+    color: var(--primaryColor);
+    border-bottom: 1.5px solid var(--primaryColor);
+  }
+}
+@media screen and (min-width: 1240px) {
+  .navBar .menu ul {
+    gap: 4rem;
+  }
 }/*# sourceMappingURL=Navbar.css.map */

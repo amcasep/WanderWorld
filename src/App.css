@@ -74,9 +74,12 @@ img, video {
   padding: 0.8rem 1rem;
   color: var(--whiteColor);
   background: var(--primaryColor);
+  margin-left: 0.5rem;
 }
 .btn:hover {
   transition: 0.3s ease;
+  color: var(--primaryColor);
+  background: var(--primaryColorLight);
 }
 
 .secTitle {
@@ -97,15 +100,6 @@ img, video {
 
 .secHeading {
   padding-bottom: 1.5rem;
-}
-
-.btn .icon {
-  margin-left: 0.5rem;
-}
-
-.btn:hover {
-  color: var(--primaryColor);
-  background: var(--primaryColorLight);
 }
 
 .section {

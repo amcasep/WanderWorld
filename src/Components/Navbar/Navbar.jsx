@@ -22,6 +22,7 @@ const removeNavBar = () => {
                 <CgAirplane className="icon" />
                 <span>WanderWorld</span>
             </div>
+            {/* This div is the menu that shows onClick */}
             <div className={navBar}>
                 <ul>
                     <li className="navList">Destination</li>
@@ -30,11 +31,11 @@ const removeNavBar = () => {
                     <li className="navList">Gallery</li>
                 </ul>
                 {/* Icon to remove navbar */}
-                <AiFillCloseCircle className="icon closeIcon" onClick={removeNavBar} />
+                <AiFillCloseCircle className="closeIcon" onClick={removeNavBar} />
             </div>
-            <button className="singUpBtn btn">Sign Up</button>
+            <button className="btn">Sign Up</button>
             {/* Icon to toggle navbar */}
-            <PiDotsNineBold className="icon menuIcon" onClick={showNavBar}/>
+            <PiDotsNineBold className="menuIcon" onClick={showNavBar}/>
 
 
         </div>

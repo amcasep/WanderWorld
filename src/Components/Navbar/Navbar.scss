@@ -29,28 +29,35 @@
     padding: 1.5rem 2rem;
     position: fixed;
     border-bottom: 1.5px solid rgb(211, 211, 211);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(5px);
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.733);
+    
 
     .logoDiv {
         display: flex;
         align-items: center;
-        justify-content: center;
 
         span {
-            color: var(--blackColor);
             font-size: var(--h3FontSize);
-            justify-content: center;
+            color: var(--primaryColor);
+            font-weight: 500;
+        }
+    }
+    .menuIcon{
+        font-size: var(--h1FontSize);
+        &:hover{
+            color: var(--primaryColor);
         }
     }
 
     @media screen and (max-width: 767px) {
+        //this is the menu that we hide at the beggining and show only when pressing button
         .menu {
             position: absolute;
             width: 70%;
             top: -100rem;
-            //estas tres cosas siempre van juntas para posicionar cualquier cosa en el medio
+            //these 3 properties always go together when we wanna position sth in the middle
             right: 50%;
             left: 50%;
             transform: translate(-50%);
@@ -77,21 +84,19 @@
         }
     }
 
-    .menuIcon, .closeIcon {
-        font-size: var(--h1FontSize);
-        &:hover{
-            color: var(--primaryColor);
-        }
-    }
     .closeIcon {
         position: absolute;
         bottom: -15px;
         color: var(--blackColor);
-        //estas tres cosas siempre van juntas para posicionar cualquier cosa en el medio
+        //these 3 properties always go together when we wanna position sth in the middle
         right: 50%;
         left: 50%;
         transform: translate(-50%);
         //
+        font-size: var(--h1FontSize);
+        &:hover{
+            color: var(--primaryColor);
+        }
     }
     .showNavBar{
         top: 8rem
@@ -100,3 +105,35 @@
 
 // Media queries
 
+@media screen and (min-width: 768px) {
+    .navBar {
+        .closeIcon, .menuIcon {
+            display: none;
+        }
+        .menu {
+            ul {
+                display: flex;
+                gap: 1rem;
+
+                li{
+                font-weight: 500;
+                padding: 1rem 0;
+                cursor: pointer;
+                &:hover {
+                    color: var(--primaryColor);
+                    border-bottom: 1.5px solid var(--primaryColor)
+                }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1240px) {
+    .navBar{
+        .menu {
+            ul{
+                gap: 4rem;
+            }
+        }
+    }
+}
