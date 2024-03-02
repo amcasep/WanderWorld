@@ -23,14 +23,27 @@
 
 .Destinations {
     .secContainer {
-        .redText {
-            color: var(--primaryColor);
-            font-size: var(--smallFontSize);
-            font-weight: 500;
-        }
+        .secText {
+            text-align: center;
+            // font-weight: 700;
+            color: var(--blackColor);
+            display: grid;
+            gap: 0.7rem;
 
-        h3 {
-            font-size: var(--h1FontSize);
+            .redText {
+                color: var(--primaryColor);
+                font-size: var(--normalFontSize);
+                font-weight: 500;
+            }
+
+            h3 {
+                font-size: var(--h1FontSize);
+                font-weight: 700;
+            }
+
+            p {
+                font-size: var(--normalFontSize);
+            }
         }
 
         .searchField {
@@ -154,20 +167,6 @@
     }
 }
 
-@media screen and (min-width: 768px) {
-    .Destinations {
-        .secContainer {
-            .searchField {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .destinationContainer {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    }
-}
-
 @media screen and (min-width: 640px) {
     .Destinations {
         .secContainer {
@@ -193,11 +192,59 @@
                             border: 1.5px dashed var(--primaryColor);
                         }
                     }
+
                     .active {
                         color: var(--primaryColor);
                         border: 1.5px dashed var(--primaryColor);
                     }
                 }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .Destinations {
+        .secContainer {
+            .searchField {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .destinationContainer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .Destinations {
+        .secContainer {
+            .secText {
+                .redText{
+                    font-size: var(--h2FontSize);                    
+                }
+                h3 {
+                    font-size: var(--biggestFontSize);
+                }
+                p{
+                    font-size: var(--h3FontSize);
+                }
+            }
+            .searchField {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .destinationContainer {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+@media screen and (min-width: 1400px) {
+    .Destinations {
+        .secContainer {
+            .destinationContainer {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
     }

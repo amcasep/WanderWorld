@@ -78,9 +78,11 @@ const Destinations = () => {
     return (
         <div className="Destinations section container">
             <div className="secContainer">
-                <span className="redText">EXPLORE NOW</span>
-                <h3>Find your dream destination</h3>
-                <p>Fill in the fields below to find the best spot for your next tour</p>
+                <div className="secText">
+                    <span className="redText">EXPLORE NOW</span>
+                    <h3>Find your dream destination</h3>
+                    <p>Fill in the fields below to find the best spot for your next tour</p>
+                </div>
                 <div className="searchField grid">
                     <div className="inputField flex">
                         <MdLocationPin className='icon' />
