@@ -60,17 +60,6 @@
     width: 60px;
   }
 }
-@media screen and (min-width: 640px) {
-  .Portfolio .secContainer .leftContent .secHeading h3 {
-    font-size: 2rem;
-  }
-  .Portfolio .secContainer .leftContent .secHeading p {
-    font-size: var(--h3FontSize);
-  }
-  .Portfolio .secContainer .leftContent .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 @media screen and (min-width: 768px) {
   .Portfolio .secContainer {
     grid-template-columns: repeat(2, 1fr);
