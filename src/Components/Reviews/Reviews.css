@@ -61,4 +61,52 @@
 .Reviews .secContainer .imgDiv img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (min-width: 480px) {
+  .Reviews .secContainer .textDiv .redText {
+    font-size: var(--normalFontSize);
+  }
+  .Reviews .secContainer .textDiv h3 {
+    font-size: 20px;
+  }
+  .Reviews .secContainer .textDiv p {
+    font-size: var(--normalFontSize);
+  }
+  .Reviews .secContainer .textDiv .stars .icon {
+    font-size: var(--h2FontSize);
+  }
+  .Reviews .secContainer .textDiv .clientsImages img {
+    height: 50px;
+    width: 50px;
+  }
+  .Reviews .secContainer .imgDiv {
+    height: 350px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .Reviews .secContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .Reviews .secContainer .imgDiv {
+    height: 250px;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .Reviews .secContainer {
+    gap: 3rem;
+  }
+  .Reviews .secContainer .textDiv .redText {
+    font-size: var(--h3FontSize);
+  }
+  .Reviews .secContainer .textDiv h3 {
+    font-size: 2rem;
+  }
+  .Reviews .secContainer .textDiv p {
+    font-size: var(--h3FontSize);
+    line-height: 2rem;
+  }
+  .Reviews .secContainer .imgDiv {
+    height: 300px;
+  }
 }/*# sourceMappingURL=Reviews.css.map */
