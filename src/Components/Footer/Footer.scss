@@ -42,44 +42,45 @@
                     color: var(--blackColor);
                 }
             }
-            .socials {
-                gap: .5rem;
-                margin: auto;
-                justify-content: center;
-                .icon{
-                    font-size: 25px;
-                    background: var(--primaryColor);
-                    border-radius: 50%;
-                    padding: 8px;
-                    color: var(--whiteColor);
-                    &:hover{
-                        background: var(--primaryColorLight);
-                    }
-                }
-            }
-            .footerLinks{
-                display: grid;
-                row-gap: .2rem;
-                .linkTitle{
-                    padding: .5rem;
-                    color: var(--blackColor);
-                    font-weight: 700;
-                }
-                li {
-                    &:hover{
-                        transform: translate(10px);
-                        a{
-                            color: var(--primaryColor);
-                        }
-                    }
-                }
-                a, .phone, .email {
-                    color: var(--blackColor);
-                    font-size: 13px;
-                    font-weight: 500;
+            
+        }
+        .socials {
+            gap: .5rem;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            .icon{
+                font-size: 25px;
+                background: var(--primaryColor);
+                border-radius: 50%;
+                padding: 8px;
+                color: var(--whiteColor);
+                &:hover{
+                    background: var(--primaryColorLight);
                 }
             }
         }
-        
+        .footerLinks{
+            display: grid;
+            row-gap: .2rem;
+            .linkTitle{
+                padding: .5rem;
+                color: var(--blackColor);
+                font-weight: 700;
+            }
+            li {
+                &:hover{
+                    transform: translate(10px);
+                    a{
+                        color: var(--primaryColor);
+                    }
+                }
+            }
+            a, .phone, .email {
+                color: var(--blackColor);
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
     }
 }

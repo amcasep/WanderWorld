@@ -40,37 +40,38 @@
   font-size: 25px;
   color: var(--blackColor);
 }
-.Footer .secContainer .logoDiv .socials {
+.Footer .secContainer .socials {
   gap: 0.5rem;
   margin: auto;
   justify-content: center;
+  align-items: center;
 }
-.Footer .secContainer .logoDiv .socials .icon {
+.Footer .secContainer .socials .icon {
   font-size: 25px;
   background: var(--primaryColor);
   border-radius: 50%;
   padding: 8px;
   color: var(--whiteColor);
 }
-.Footer .secContainer .logoDiv .socials .icon:hover {
+.Footer .secContainer .socials .icon:hover {
   background: var(--primaryColorLight);
 }
-.Footer .secContainer .logoDiv .footerLinks {
+.Footer .secContainer .footerLinks {
   display: grid;
   row-gap: 0.2rem;
 }
-.Footer .secContainer .logoDiv .footerLinks .linkTitle {
+.Footer .secContainer .footerLinks .linkTitle {
   padding: 0.5rem;
   color: var(--blackColor);
   font-weight: 700;
 }
-.Footer .secContainer .logoDiv .footerLinks li:hover {
+.Footer .secContainer .footerLinks li:hover {
   transform: translate(10px);
 }
-.Footer .secContainer .logoDiv .footerLinks li:hover a {
+.Footer .secContainer .footerLinks li:hover a {
   color: var(--primaryColor);
 }
-.Footer .secContainer .logoDiv .footerLinks a, .Footer .secContainer .logoDiv .footerLinks .phone, .Footer .secContainer .logoDiv .footerLinks .email {
+.Footer .secContainer .footerLinks a, .Footer .secContainer .footerLinks .phone, .Footer .secContainer .footerLinks .email {
   color: var(--blackColor);
   font-size: 13px;
   font-weight: 500;
