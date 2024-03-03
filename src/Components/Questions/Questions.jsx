@@ -1,12 +1,21 @@
 import './Questions.css'
 import Accordion from './Accordion';
 import { useState } from 'react';
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+
+
 const Questions = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 2000 })
+    }, [])
 
     const [active, setActive] = useState('How do I choose the right travel destination for me?')
 
     return (
-        <div className="Questions section container">
+        <div className="Questions section container" data-aos='fade-up'>
             <div className="secHeading">
                 <h3>Frequently Asked Questions</h3>
             </div>

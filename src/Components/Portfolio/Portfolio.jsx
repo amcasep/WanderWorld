@@ -4,17 +4,25 @@ import icon2 from '../../assets/destination.png'
 import icon3 from '../../assets/chat.png'
 import img from '../../assets/traveller.jpg'
 import img2 from '../../assets/traveller2.jpg'
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Portfolio = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 2000 })
+    }, [])
+
     return (
         <div className="Portfolio section container">
             <div className="secContainer grid">
                 <div className="leftContent">
                     <div className="secHeading">
-                        <h3>Why Should You Choose Us</h3>
-                        <p>We have extensive knowledge and experience in the travel industry.</p>
+                        <h3 data-aos='fade-up'>Why Should You Choose Us</h3>
+                        <p data-aos='fade-up'>We have extensive knowledge and experience in the travel industry.</p>
                     </div>
-                    <div className="grid">
+                    <div className="grid" data-aos='fade-up'>
                         <div className="singlePortfolio flex">
                             <div className="iconDiv">
                                 <img src={icon1} alt="icon image"/>
@@ -58,7 +66,7 @@ const Portfolio = () => {
 
                     </div>
                 </div>
-                <div className="imgDiv">
+                <div className="imgDiv" data-aos='fade-up'>
                     <img src={img} alt="" />
                 </div>
             </div>

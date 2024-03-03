@@ -14,6 +14,11 @@ import image6 from '../../assets/london.jpg'
 import image7 from '../../assets/paris.jpg'
 import image8 from '../../assets/vancouver.jpg'
 
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+
+
 const destinations = [
     {
         id: 1,
@@ -75,15 +80,20 @@ const destinations = [
 ]
 
 const Destinations = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 2000 })
+    }, [])
+
     return (
         <div className="Destinations section container">
             <div className="secContainer">
                 <div className="secText">
-                    <span className="redText">EXPLORE NOW</span>
-                    <h3>Find your dream destination</h3>
-                    <p>Fill in the fields below to find the best spot for your next tour</p>
+                    <span className="redText" data-aos='fade-up'>EXPLORE NOW</span>
+                    <h3 data-aos='fade-up'>Find your dream destination</h3>
+                    <p data-aos='fade-up'>Fill in the fields below to find the best spot for your next tour</p>
                 </div>
-                <div className="searchField grid">
+                <div className="searchField grid" data-aos='fade-up'>
                     <div className="inputField flex">
                         <MdLocationPin className='icon' />
                         <input type="text" placeholder='Location' />
@@ -98,7 +108,7 @@ const Destinations = () => {
                     </div>
                     <button className="btn flex"><BiSearchAlt className='icon' />Search</button>
                 </div>
-                <div className="secMenu">
+                <div className="secMenu" data-aos='fade-up'>
                     <ul className='flex'>
                         <li className='active'>All</li>
                         <li>Recommended</li>
@@ -108,7 +118,7 @@ const Destinations = () => {
                         <li>Mountain</li>
                     </ul>
                 </div>
-                <div className="destinationContainer grid">
+                <div className="destinationContainer grid" data-aos='fade-up'>
                     {destinations.map(des => {
                         return (
                             <div className="singleDestination" key={des.id}>
