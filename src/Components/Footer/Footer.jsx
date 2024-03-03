@@ -49,12 +49,11 @@ const Footer = () => {
                         <a href="#">Privacy</a>
                     </li>
                 </div>
-                <div className="footerLinks">
+                {/* <div className="footerLinks">
                     <span className="linkTitle">Contact Details</span>
                     <span className="phone">+657 254 297</span>
                     <span className="email">email@email.com</span>
-
-                </div>
+                </div> */}
             </div>
         </div>
     );

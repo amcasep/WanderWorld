@@ -23,7 +23,7 @@
   padding: 2rem 0;
 }
 .Footer .secContainer {
-  gap: 1.5rem;
+  gap: 1rem;
   text-align: center;
   align-items: flex-start;
 }
@@ -34,7 +34,6 @@
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  padding-bottom: 0.5rem;
 }
 .Footer .secContainer .logoDiv .footerLogo .icon {
   font-size: 25px;
@@ -71,8 +70,16 @@
 .Footer .secContainer .footerLinks li:hover a {
   color: var(--primaryColor);
 }
-.Footer .secContainer .footerLinks a, .Footer .secContainer .footerLinks .phone, .Footer .secContainer .footerLinks .email {
+.Footer .secContainer .footerLinks a,
+.Footer .secContainer .footerLinks .phone,
+.Footer .secContainer .footerLinks .email {
   color: var(--blackColor);
   font-size: 13px;
   font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .Footer .secContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }/*# sourceMappingURL=Footer.css.map */

@@ -24,63 +24,86 @@
 .Footer {
     background: var(--primaryColorLight);
     padding: 2rem 0;
+
     .secContainer {
-        gap: 1.5rem;
+        gap: 1rem;
         text-align: center;
         align-items: flex-start;
+
         .logoDiv {
-            .footerLogo{
+            .footerLogo {
                 display: flex;
                 color: var(--blackColor);
                 font-weight: 500;
                 cursor: pointer;
                 align-items: center;
                 justify-content: center;
-                padding-bottom: .5rem;
-                .icon{
+
+                // padding-bottom: .5rem;
+                .icon {
                     font-size: 25px;
                     color: var(--blackColor);
                 }
             }
-            
+
         }
+
         .socials {
             gap: .5rem;
             margin: auto;
             justify-content: center;
             align-items: center;
-            .icon{
+
+            .icon {
                 font-size: 25px;
                 background: var(--primaryColor);
                 border-radius: 50%;
                 padding: 8px;
                 color: var(--whiteColor);
-                &:hover{
+
+                &:hover {
                     background: var(--primaryColorLight);
                 }
             }
         }
-        .footerLinks{
+
+        .footerLinks {
             display: grid;
             row-gap: .2rem;
-            .linkTitle{
+
+            .linkTitle {
                 padding: .5rem;
                 color: var(--blackColor);
                 font-weight: 700;
             }
+
             li {
-                &:hover{
+                &:hover {
                     transform: translate(10px);
-                    a{
+
+                    a {
                         color: var(--primaryColor);
                     }
                 }
             }
-            a, .phone, .email {
+
+            a,
+            .phone,
+            .email {
                 color: var(--blackColor);
                 font-size: 13px;
                 font-weight: 500;
             }
+        }
+    }
+}
+
+// Media queries
+
+@media screen and (min-width: 768px) {
+    .Footer {
+        .secContainer {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
