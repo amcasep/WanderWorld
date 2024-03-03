@@ -34,11 +34,11 @@ body {
     display: flex;
     align-items: center;
 }
-// .grid{
-//     display: grid;
-//     align-items: center;
-//     gap: 1.5rem
-// }
+.grid{
+    display: grid;
+    align-items: center;
+    gap: 1.5rem
+}
 p {
     font-size: var(--smallFontSize);
 }

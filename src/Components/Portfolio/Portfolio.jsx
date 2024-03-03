@@ -3,6 +3,7 @@ import icon1 from '../../assets/protection.png'
 import icon2 from '../../assets/destination.png'
 import icon3 from '../../assets/chat.png'
 import img from '../../assets/traveller.jpg'
+import img2 from '../../assets/traveller2.jpg'
 
 const Portfolio = () => {
     return (
@@ -10,7 +11,7 @@ const Portfolio = () => {
             <div className="secContainer grid">
                 <div className="leftContent">
                     <div className="secHeading">
-                        <h3>Why should You Choose Us</h3>
+                        <h3>Why Should You Choose Us</h3>
                         <p>We have extensive knowledge and experience in the travel industry.</p>
                     </div>
                     <div className="grid">
@@ -57,7 +58,7 @@ const Portfolio = () => {
 
                     </div>
                 </div>
-                <div className="rightContent">
+                <div className="imgDiv">
                     <img src={img} alt="" />
                 </div>
             </div>
