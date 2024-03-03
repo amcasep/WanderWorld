@@ -6,7 +6,7 @@ import Destinations from './Components/Destinations/Destinations'
 import Portfolio from './Components/Portfolio/Portfolio'
 import Reviews from './Components/Reviews/Reviews'
 import Questions from './Components/Questions/Questions'
-import Subscribe from './Components/Subscribe/Subscribe'
+// import Subscribe from './Components/Subscribe/Subscribe'
 import Footer from './Components/Footer/Footer'
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
    <Portfolio/>
    <Reviews/>
    <Questions/>
-   <Subscribe/>
+   {/* <Subscribe/> */}
    <Footer/>
     </div>
   )
