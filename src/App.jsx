@@ -1,4 +1,5 @@
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
 import Home from './Components/Home/Home'
 import Middle from './Components/Middle/Middle'
@@ -15,13 +16,17 @@ function App() {
   return (
     <div>
    <Navbar/>
-   <Home/>
+   <Routes>
+      <Route path="/" element={<Home/>}/>
+   </Routes>
+
+   {/* <Home/>
    <Middle/>
    <Destinations/>
    <Portfolio/>
    <Reviews/>
    <Questions/>
-   {/* <Subscribe/> */}
+   <Subscribe/> */}
    <Footer/>
     </div>
   )
