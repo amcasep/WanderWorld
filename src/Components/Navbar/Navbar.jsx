@@ -3,7 +3,7 @@ import { CgAirplane } from "react-icons/cg";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { PiDotsNineBold } from "react-icons/pi";
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     //State to track and update navbar
@@ -32,7 +32,7 @@ const Navbar = () => {
                 {/* Icon to remove navbar */}
                 <AiFillCloseCircle className="closeIcon" onClick={removeNavBar} />
             </div>
-            <button className="btn">Sign Up</button>
+           <Link to ="/destinations/add"> <button className="btn">Add Destination</button></Link>
             {/* Icon to toggle navbar */}
             <PiDotsNineBold className="menuIcon" onClick={showNavBar} />
 
