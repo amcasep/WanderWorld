@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 import axios from "axios"
 import Aos from 'aos';
 import 'aos/dist/aos.css'
-
+import { Link } from 'react-router-dom';
 
 const Destinations = () => {
 
@@ -40,7 +40,7 @@ const Destinations = () => {
     const [favorites, setFavorites] = useState([])
 
     const toggleFavorite = (destination) => {
-       
+
         if (!favorites.map((fav) => fav.id).includes(destination.id)) {
             setFavorites([...favorites, destination]);
         }
@@ -94,9 +94,12 @@ const Destinations = () => {
                         (<p>Loading...</p>) :
                         (destinations.map(des => {
                             return (
+
                                 <div className="singleDestination" key={des.id} data-aos='fade-up'>
                                     <div className="imgDiv" >
-                                        <img src={des.image} alt="Destination image" />
+                                        <Link to={`/destinations/${des.id}`}>
+                                            <img src={des.image} alt="Destination image" />
+                                        </Link>
                                         <div className="descInfo flex">
                                             <div className="text">
                                                 <span className="name">{des.city}</span>

@@ -6,16 +6,16 @@ import { useState } from 'react';
 
 
 const Navbar = () => {
-//State to track and update navbar
-const [navBar, setNavBar] = useState('menu')
-//Function to show navbar
-const showNavBar = () => {
-    setNavBar('menu showNavBar')
-}
-//Function to remove navbar
-const removeNavBar = () => {
-    setNavBar('menu')
-}
+    //State to track and update navbar
+    const [navBar, setNavBar] = useState('menu')
+    //Function to show navbar
+    const showNavBar = () => {
+        setNavBar('menu showNavBar')
+    }
+    //Function to remove navbar
+    const removeNavBar = () => {
+        setNavBar('menu')
+    }
     return (
         <div className="navBar">
             <div className="logoDiv">
@@ -25,17 +25,16 @@ const removeNavBar = () => {
             {/* This div is the menu that shows onClick */}
             <div className={navBar}>
                 <ul>
-                    <li className="navList"><a href="/">Destinations</a></li>
-                    <li className="navList"><a href="/">About Us</a></li>
-                    <li className="navList"><a href="/">FAQ</a></li>
-                    <li className="navList"><a href="/favorites">Favorites</a></li>
+                    <li className="navList"><a href="/">Home</a></li>
+                    <li className="navList"><a href="/destinations">Destinations</a></li>
+                    <li className="navList"><a href="/destinations/favorites">Favorites</a></li>
                 </ul>
                 {/* Icon to remove navbar */}
                 <AiFillCloseCircle className="closeIcon" onClick={removeNavBar} />
             </div>
             <button className="btn">Sign Up</button>
             {/* Icon to toggle navbar */}
-            <PiDotsNineBold className="menuIcon" onClick={showNavBar}/>
+            <PiDotsNineBold className="menuIcon" onClick={showNavBar} />
 
 
         </div>

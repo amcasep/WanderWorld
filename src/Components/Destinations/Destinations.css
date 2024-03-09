@@ -18,6 +18,9 @@
   --borderRadius: 3rem;
 }
 
+.Destinations {
+  padding-top: 150px;
+}
 .Destinations .secContainer .secText {
   text-align: center;
   color: var(--blackColor);

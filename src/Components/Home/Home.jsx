@@ -45,7 +45,7 @@ const Home = () => {
                 </div>
             </div>
             <Middle />
-            <Destinations />
+          
             <Portfolio />
             <Reviews />
             <Questions />
