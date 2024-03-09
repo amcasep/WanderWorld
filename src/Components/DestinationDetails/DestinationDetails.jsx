@@ -9,7 +9,7 @@ const api = {
     base: 'https://api.openweathermap.org/data/2.5/'
 };
 
-const DestinationDetails = ({fetchDestinations}) => {
+const DestinationDetails = () => {
 
     const API_URL = import.meta.env.VITE_JSON_SERVER_API_URL;
 
@@ -49,9 +49,7 @@ const DestinationDetails = ({fetchDestinations}) => {
     const deleteProject = () => {
         axios.delete(API_URL + '/destinations/' + destinationId)
             .then((response) => {
-                fetchDestinations()
-                navigate("/")
-
+                navigate("/destinations")
             })
             .catch((e) => {
                 console.log(e)
@@ -178,7 +176,7 @@ const DestinationDetails = ({fetchDestinations}) => {
 
                         </div>
                         <div className="buttons-wrap">
-                            <Link to={`/destinations/edit/${destinationId}`}><button>Edit Destination</button></Link>
+                            <Link to={`/destinations/${destinationId}/edit`}><button>Edit Destination</button></Link>
                             <button onClick={deleteProject}>Delete Destination</button>
                         </div>
                     </div>

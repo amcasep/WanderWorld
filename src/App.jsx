@@ -6,6 +6,7 @@ import Destinations from './Components/Destinations/Destinations'
 import Favorites from './Components/Favorites/Favorites'
 import Footer from './Components/Footer/Footer'
 import DestinationDetails from './Components/DestinationDetails/DestinationDetails'
+import EditDestinationPage from './Components/EditDestinationPage/EditDestinationPage'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path='/destinations' element={  <Destinations /> } />
       <Route path='/destinations/:destinationId' element={  <DestinationDetails /> } />
+      <Route path="/destinations/:destinationId/edit" element={ <EditDestinationPage /> } />
       <Route path="/destinations/favorites" element={<Favorites/>}/>
    </Routes>
 
