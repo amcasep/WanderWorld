@@ -12,6 +12,7 @@ import axios from "axios"
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { Link } from 'react-router-dom';
+import LeafletMap from '../LeafletMap/LeafletMap';
 
 const Destinations = () => {
 
@@ -57,6 +58,7 @@ const Destinations = () => {
 
 
     return (
+        <>
         <div className="Destinations section container" id="destinations">
             <div className="secContainer">
                 <div className="secText">
@@ -114,8 +116,11 @@ const Destinations = () => {
                         )
                     }
                 </div>
+                <LeafletMap destinations={destinations}/>
             </div>
         </div>
+         
+          </>
     );
 }
 

@@ -1,6 +1,5 @@
 import './Home.css'
 import Middle from '../Middle/Middle';
-import Destinations from '../Destinations/Destinations';
 import Portfolio from '../Portfolio/Portfolio';
 import Reviews from '../Reviews/Reviews';
 import Questions from '../Questions/Questions';
