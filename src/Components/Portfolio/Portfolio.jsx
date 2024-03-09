@@ -15,7 +15,7 @@ const Portfolio = () => {
     }, [])
 
     return (
-        <div className="Portfolio section container">
+        <div className="Portfolio section container" id="about us">
             <div className="secContainer grid">
                 <div className="leftContent">
                     <div className="secHeading">

@@ -37,7 +37,7 @@ const Destinations = () => {
     }, [])
 
     return (
-        <div className="Destinations section container">
+        <div className="Destinations section container" id="destinations">
             <div className="secContainer">
                 <div className="secText">
                     <span className="redText" data-aos='fade-up'>EXPLORE NOW</span>
@@ -74,8 +74,8 @@ const Destinations = () => {
                         (<p>Loading...</p>) :
                         (destinations.map(des => {
                             return (
-                                <div className="singleDestination" key={des.id}>
-                                    <div className="imgDiv" data-aos='fade-up'>
+                                <div className="singleDestination" key={des.id} data-aos='fade-up'>
+                                    <div className="imgDiv" >
                                         <img src={des.image} alt="Destination image" />
                                         <div className="descInfo flex">
                                             <div className="text">

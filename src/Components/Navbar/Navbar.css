@@ -67,9 +67,11 @@
     font-weight: 500;
     padding: 1rem 0;
     text-align: center;
-    cursor: pointer;
   }
-  .navBar .menu li:hover {
+  .navBar .menu li a {
+    color: black;
+  }
+  .navBar .menu li a:hover {
     color: var(--primaryColor);
     border-bottom: 1.5px solid var(--primaryColor);
   }
@@ -103,9 +105,11 @@
   }
   .navBar .menu ul li {
     font-weight: 500;
-    cursor: pointer;
   }
-  .navBar .menu ul li:hover {
+  .navBar .menu ul li a {
+    color: black;
+  }
+  .navBar .menu ul li a:hover {
     color: var(--primaryColor);
     border-bottom: 1.5px solid var(--primaryColor);
   }

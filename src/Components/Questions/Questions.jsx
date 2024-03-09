@@ -15,7 +15,7 @@ const Questions = () => {
     const [active, setActive] = useState('How do I choose the right travel destination for me?')
 
     return (
-        <div className="Questions section container" data-aos='fade-up'>
+        <div className="Questions section container" data-aos='fade-up' id="faq">
             <div className="secHeading">
                 <h3>Frequently Asked Questions</h3>
             </div>

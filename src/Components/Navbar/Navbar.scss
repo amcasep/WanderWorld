@@ -74,11 +74,15 @@
                 font-weight: 500;
                 padding: 1rem 0;
                 text-align: center;
-                cursor: pointer;
+                
 
-                &:hover {
-                    color: var(--primaryColor);
-                    border-bottom: 1.5px solid var(--primaryColor)
+                
+                a{
+                    color: black;
+                    &:hover {
+                        color: var(--primaryColor);
+                        border-bottom: 1.5px solid var(--primaryColor)
+                    }
                 }
             }
         }
@@ -119,10 +123,14 @@
                 li{
                 font-weight: 500;
                 // padding: 1rem 0;
-                cursor: pointer;
-                &:hover {
-                    color: var(--primaryColor);
-                    border-bottom: 1.5px solid var(--primaryColor)
+               
+               
+                a{
+                    color: black;
+                    &:hover {
+                        color: var(--primaryColor);
+                        border-bottom: 1.5px solid var(--primaryColor)
+                    }
                 }
                 }
             }

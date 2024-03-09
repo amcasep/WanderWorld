@@ -34,13 +34,13 @@ const Footer = () => {
                         <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="#">Explore</a>
+                        <a href="#destinations">Destinations</a>
                     </li>
                     <li>
-                        <a href="#">Travel</a>
+                        <a href="#about us">About Us</a>
                     </li>
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="#">Favorites</a>
                     </li>
                 </div>
                 <div className="footerLinks">
