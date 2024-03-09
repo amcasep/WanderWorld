@@ -25,10 +25,10 @@ const removeNavBar = () => {
             {/* This div is the menu that shows onClick */}
             <div className={navBar}>
                 <ul>
-                    <li className="navList"><a href="#destinations">Destinations</a></li>
-                    <li className="navList"><a href="#about us">About Us</a></li>
-                    <li className="navList"><a href="#faq">FAQ</a></li>
-                    <li className="navList"><a>Favorites</a></li>
+                    <li className="navList"><a href="/">Destinations</a></li>
+                    <li className="navList"><a href="/">About Us</a></li>
+                    <li className="navList"><a href="/">FAQ</a></li>
+                    <li className="navList"><a href="/favorites">Favorites</a></li>
                 </ul>
                 {/* Icon to remove navbar */}
                 <AiFillCloseCircle className="closeIcon" onClick={removeNavBar} />

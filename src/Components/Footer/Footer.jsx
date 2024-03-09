@@ -31,7 +31,7 @@ const Footer = () => {
                 <div className="footerLinks">
                     <span className="linkTitle">Information</span>
                     <li>
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
                         <a href="#destinations">Destinations</a>
@@ -40,7 +40,7 @@ const Footer = () => {
                         <a href="#about us">About Us</a>
                     </li>
                     <li>
-                        <a href="#">Favorites</a>
+                        <a href="/favorites">Favorites</a>
                     </li>
                 </div>
                 <div className="footerLinks">

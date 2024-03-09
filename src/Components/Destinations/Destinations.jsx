@@ -4,7 +4,8 @@ import { BsFillCreditCardFill } from "react-icons/bs";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { TiLocation } from "react-icons/ti";
-
+import { IoMdHeartEmpty } from "react-icons/io";
+import { IoHeart } from "react-icons/io5";
 
 import { useEffect, useState } from 'react';
 import axios from "axios"
@@ -35,6 +36,25 @@ const Destinations = () => {
     useEffect(() => {
         Aos.init({ duration: 2000 })
     }, [])
+
+    const [favorites, setFavorites] = useState([])
+
+    const toggleFavorite = (destination) => {
+       
+        if (!favorites.map((fav) => fav.id).includes(destination.id)) {
+            setFavorites([...favorites, destination]);
+        }
+        else {
+            setFavorites(favorites.filter((fav) => fav.id !== destination.id));
+        }
+        toggleHeartIcon()
+    };
+    console.log(favorites)
+
+    const toggleHeartIcon = (destination) => {
+        return destination ? (favorites.map((fav) => fav.id).includes(destination.id) ? <IoHeart /> : <IoMdHeartEmpty />) : null;
+    }
+
 
     return (
         <div className="Destinations section container" id="destinations">
@@ -82,7 +102,7 @@ const Destinations = () => {
                                                 <span className="name">{des.city}</span>
                                                 <p className="flex"><TiLocation className='icon' />{des.country}</p>
                                             </div>
-                                            <span className="rating">{des.rating}</span>
+                                            <button className="rating" onClick={() => toggleFavorite(des)}>{toggleHeartIcon(des)}</button>
                                         </div>
                                     </div>
                                 </div>
