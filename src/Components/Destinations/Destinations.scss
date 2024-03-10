@@ -48,16 +48,19 @@
         }
 
         .searchField {
-            display: grid;
+            justify-content: space-between;
             gap: 1rem;
             margin-top: 2rem;
 
+           
             .inputField {
                 background: var(--primaryColorLight);
                 padding: 1rem;
                 border-radius: var(--borderRadius);
                 gap: .5rem;
-
+                border: none;
+                outline: none;
+               
                 input {
                     background: transparent;
                     border: none;
@@ -182,23 +185,26 @@
                     gap: 1rem;
 
                     li {
-                        background: transparent;
-                        padding: 10px 13px;
-                        border-radius: var(--borderRadius);
-                        color: var(--blackColor);
-                        border: 1.5px dashed transparent;
-                        cursor: pointer;
-
-                        &:hover {
-                            color: var(--primaryColor);
-                            border: 1.5px dashed var(--primaryColor);
+                        button {
+                            border: none;
+                            outline: none;
+                            background: none;
+                            padding: 10px 13px;
+                            border-radius: var(--borderRadius);
+                            color: var(--blackColor);
+                            cursor: pointer;
+                            border: 1.5px dashed transparent;
+                            &:hover {
+                                color: var(--primaryColor);
+                                border: 1.5px dashed var(--primaryColor);
+                            }
                         }
                     }
-
-                    .active {
-                        color: var(--primaryColor);
-                        border: 1.5px dashed var(--primaryColor);
-                    }
+                    // .active {
+                    //     color: var(--primaryColor);
+                    //     border: 1.5px dashed var(--primaryColor);
+                    //       border-radius: var(--borderRadius);
+                    // }
                 }
             }
         }

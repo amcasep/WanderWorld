@@ -40,7 +40,7 @@
   font-size: var(--normalFontSize);
 }
 .Destinations .secContainer .searchField {
-  display: grid;
+  justify-content: space-between;
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -49,6 +49,8 @@
   padding: 1rem;
   border-radius: var(--borderRadius);
   gap: 0.5rem;
+  border: none;
+  outline: none;
 }
 .Destinations .secContainer .searchField .inputField input {
   background: transparent;
@@ -140,19 +142,17 @@
     justify-content: center;
     gap: 1rem;
   }
-  .Destinations .secContainer .secMenu .flex li {
-    background: transparent;
+  .Destinations .secContainer .secMenu .flex li button {
+    border: none;
+    outline: none;
+    background: none;
     padding: 10px 13px;
     border-radius: var(--borderRadius);
     color: var(--blackColor);
-    border: 1.5px dashed transparent;
     cursor: pointer;
+    border: 1.5px dashed transparent;
   }
-  .Destinations .secContainer .secMenu .flex li:hover {
-    color: var(--primaryColor);
-    border: 1.5px dashed var(--primaryColor);
-  }
-  .Destinations .secContainer .secMenu .flex .active {
+  .Destinations .secContainer .secMenu .flex li button:hover {
     color: var(--primaryColor);
     border: 1.5px dashed var(--primaryColor);
   }

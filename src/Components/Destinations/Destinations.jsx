@@ -69,12 +69,12 @@ const Destinations = () => {
         setInput(value)
         fetchDataSearchBar(value)
     }
+    // Filter the destinations by property type 
 
-    // Fade Up Effect 
-
-    useEffect(() => {
-        Aos.init({ duration: 2000 })
-    }, [])
+    const filterDestinationsByType = (type) => {
+        const filtered = originalDestinations.filter((dest) => dest.destinationType === type);
+        setDestinations(filtered);
+      };
 
     // Toggle destinations to favorites 
 
@@ -104,16 +104,16 @@ const Destinations = () => {
             <div className="Destinations section container" id="destinations">
                 <div className="secContainer">
                     <div className="secText">
-                        <span className="redText" data-aos='fade-up'>EXPLORE NOW</span>
-                        <h3 data-aos='fade-up'>Find your dream destination</h3>
-                        <p data-aos='fade-up'>Fill in the fields below to find the best spot for your next tour</p>
+                        <span className="redText">EXPLORE NOW</span>
+                        <h3 >Find your dream destination</h3>
+                        <p>Fill in the fields below to find the best spot for your next tour</p>
                     </div>
-                    <div className="searchField grid" data-aos='fade-up'>
+                    <div className="searchField flex">
                         <div className="inputField flex SearchBar">
                             <BiSearchAlt className='icon' />
                             <input type="search" placeholder='Search...' onChange={(e) => handleChange(e.target.value)} value={input} />
                         </div>
-                        <select className="continents" onChange={filterDestinations}>
+                        <select className="inputField" onChange={filterDestinations}>
                             <option value="DEFAULT">Select Continent/Country</option>
                             <option value="all">All destinations</option>
                             <option value="North America">North America</option>
@@ -123,25 +123,25 @@ const Destinations = () => {
                             <option value="Asia">Asia</option>
                             <option value="Australia">Australia</option>
                         </select>
+                        <div className="secMenu" >
+                            <ul className='flex'>
+                                <li className='active'><button onClick={displayAllDestinations}>All</button></li>
+                                <li><button onClick={() => filterDestinationsByType('adventure')}>Adventure</button></li>
+                                <li><button onClick={() => filterDestinationsByType('beach')}>Beach</button></li>
+                                <li><button onClick={() => filterDestinationsByType('urban')}>Urban</button></li>
+                                <li><button onClick={() => filterDestinationsByType('nature')}>Nature</button></li>
+                                {/* <li><button onClick={() => filterDestinationsByType('mountain')}>Mountain</button></li> */}
+                            </ul>
+                        </div>
+                    </div>
 
-                    </div>
-                    <div className="secMenu" data-aos='fade-up'>
-                        <ul className='flex'>
-                            <li className='active'>All</li>
-                            <li>Recommended</li>
-                            <li>Beach</li>
-                            <li>Urban</li>
-                            <li>Nature</li>
-                            <li>Mountain</li>
-                        </ul>
-                    </div>
-                    <div className="destinationContainer grid" data-aos='fade-up'>
+                    <div className="destinationContainer grid" >
                         {!destinations ?
                             (<p>Loading...</p>) :
                             (destinations.map(des => {
                                 return (
 
-                                    <div className="singleDestination" key={des.id} data-aos='fade-up'>
+                                    <div className="singleDestination" key={des.id} >
                                         <div className="imgDiv" >
                                             <Link to={`/destinations/${des.id}`}>
                                                 <img src={des.image} alt="Destination image" />
