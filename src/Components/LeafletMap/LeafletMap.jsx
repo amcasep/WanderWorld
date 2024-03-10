@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 import "./LeafletMap.css"
 import { Link } from "react-router-dom";
 
-const LeafletMap = ({destinations}) => {
+const LeafletMap = ({ destinations }) => {
     const paris = [48.86314634052172, 2.2941632958970226];
     return (
         <div className="map-div">
@@ -14,11 +14,13 @@ const LeafletMap = ({destinations}) => {
                 />
                 {destinations && destinations.map((des) => {
                     return (
-                        <Marker position={des.coordination}>
-                        <Popup>
-                           <Link to={`/destinations/${des.id}`}>{des.city}</Link>
-                        </Popup>
-                    </Marker>
+                        <div key={des.id}>
+                            <Marker position={des.coordination}>
+                                <Popup>
+                                    <Link to={`/destinations/${des.id}`}>{des.city}</Link>
+                                </Popup>
+                            </Marker>
+                        </div>
                     )
                 })}
             </MapContainer>

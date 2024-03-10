@@ -35,21 +35,48 @@ const Destinations = () => {
         displayAllDestinations()
     }, []);
 
+    // Dropw Down Menu to filter destinations by choosing continent
+
     const filterDestinations = (event) => {
-    
+
         const continent = event.target.value;
-    
+
         if (continent === "all") {
             setDestinations(originalDestinations)
-         } else {      
-          const filtered = originalDestinations.filter(dest => dest.continent === continent)
-          setDestinations(filtered);
-         }
-      }
+        } else {
+            const filtered = originalDestinations.filter(dest => dest.continent === continent)
+            setDestinations(filtered);
+        }
+    }
+    // SearchBar to filter destinations by typying in the search bar the name of the cities
+
+    const [input, setInput] = useState("");
+
+    const fetchDataSearchBar = (value) => {
+
+        axios
+            .get(API_URL + "/destinations")
+            .then((response) => {
+                const result = response.data.filter(dest => dest.city.toLowerCase().includes(value.toLowerCase()));
+                setDestinations(result)
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+    }
+
+    const handleChange = (value) => {
+        setInput(value)
+        fetchDataSearchBar(value)
+    }
+
+    // Fade Up Effect 
 
     useEffect(() => {
         Aos.init({ duration: 2000 })
     }, [])
+
+    // Toggle destinations to favorites 
 
     const [favorites, setFavorites] = useState([])
 
@@ -64,6 +91,8 @@ const Destinations = () => {
         toggleHeartIcon()
     };
     console.log(favorites)
+
+    // Toggle destination button 
 
     const toggleHeartIcon = (destination) => {
         return destination ? (favorites.map((fav) => fav.id).includes(destination.id) ? <IoHeart /> : <IoMdHeartEmpty />) : null;
@@ -80,9 +109,9 @@ const Destinations = () => {
                         <p data-aos='fade-up'>Fill in the fields below to find the best spot for your next tour</p>
                     </div>
                     <div className="searchField grid" data-aos='fade-up'>
-                        <div className="inputField flex">
-                        <BiSearchAlt className='icon' />
-                            <input type="text" placeholder='Search...' />
+                        <div className="inputField flex SearchBar">
+                            <BiSearchAlt className='icon' />
+                            <input type="search" placeholder='Search...' onChange={(e) => handleChange(e.target.value)} value={input} />
                         </div>
                         <select className="continents" onChange={filterDestinations}>
                             <option value="DEFAULT">Select Continent/Country</option>
@@ -94,7 +123,7 @@ const Destinations = () => {
                             <option value="Asia">Asia</option>
                             <option value="Australia">Australia</option>
                         </select>
-                        
+
                     </div>
                     <div className="secMenu" data-aos='fade-up'>
                         <ul className='flex'>
