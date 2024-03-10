@@ -87,7 +87,7 @@ const EditDestinationPage = () => {
 
     return (
         <div className="EditDestinationPage">
-            <h1>Edit the Destination</h1>
+            <h1>Edit Destination</h1>
 
             <form onSubmit={handleFormSubmit}>
                 <label>City:

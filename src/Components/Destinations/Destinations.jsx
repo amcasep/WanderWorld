@@ -19,12 +19,13 @@ const Destinations = () => {
     const API_URL = import.meta.env.VITE_JSON_SERVER_API_URL;
 
     const [destinations, setDestinations] = useState([]);
+    const [originalDestinations, setOriginalDestinations] = useState([]);
 
     const displayAllDestinations = () => {
         axios.get(API_URL + '/destinations')
             .then((response) => {
                 setDestinations(response.data)
-                console.log(response.data)
+                setOriginalDestinations(response.data);
             })
             .catch((e) => {
                 console.log(e);
@@ -33,6 +34,18 @@ const Destinations = () => {
     useEffect(() => {
         displayAllDestinations()
     }, []);
+
+    const filterDestinations = (event) => {
+    
+        const continent = event.target.value;
+    
+        if (continent === "all") {
+            setDestinations(originalDestinations)
+         } else {      
+          const filtered = originalDestinations.filter(dest => dest.continent === continent)
+          setDestinations(filtered);
+         }
+      }
 
     useEffect(() => {
         Aos.init({ duration: 2000 })
@@ -59,68 +72,70 @@ const Destinations = () => {
 
     return (
         <>
-        <div className="Destinations section container" id="destinations">
-            <div className="secContainer">
-                <div className="secText">
-                    <span className="redText" data-aos='fade-up'>EXPLORE NOW</span>
-                    <h3 data-aos='fade-up'>Find your dream destination</h3>
-                    <p data-aos='fade-up'>Fill in the fields below to find the best spot for your next tour</p>
-                </div>
-                <div className="searchField grid" data-aos='fade-up'>
-                    <div className="inputField flex">
-                        <MdLocationPin className='icon' />
-                        <input type="text" placeholder='Location' />
+            <div className="Destinations section container" id="destinations">
+                <div className="secContainer">
+                    <div className="secText">
+                        <span className="redText" data-aos='fade-up'>EXPLORE NOW</span>
+                        <h3 data-aos='fade-up'>Find your dream destination</h3>
+                        <p data-aos='fade-up'>Fill in the fields below to find the best spot for your next tour</p>
                     </div>
-                    <div className="inputField flex">
-                        <BsFillCreditCardFill className='icon' />
-                        <input type="text" placeholder='Budget' />
+                    <div className="searchField grid" data-aos='fade-up'>
+                        <div className="inputField flex">
+                        <BiSearchAlt className='icon' />
+                            <input type="text" placeholder='Search...' />
+                        </div>
+                        <select className="continents" onChange={filterDestinations}>
+                            <option value="DEFAULT">Select Continent/Country</option>
+                            <option value="all">All destinations</option>
+                            <option value="North America">North America</option>
+                            <option value="South America">South America</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Australia">Australia</option>
+                        </select>
+                        
                     </div>
-                    <div className="inputField flex">
-                        <BsFillCalendarDateFill className='icon' />
-                        <input type="text" placeholder='Date' />
+                    <div className="secMenu" data-aos='fade-up'>
+                        <ul className='flex'>
+                            <li className='active'>All</li>
+                            <li>Recommended</li>
+                            <li>Beach</li>
+                            <li>Urban</li>
+                            <li>Nature</li>
+                            <li>Mountain</li>
+                        </ul>
                     </div>
-                    <button className="btn flex"><BiSearchAlt className='icon' />Search</button>
-                </div>
-                <div className="secMenu" data-aos='fade-up'>
-                    <ul className='flex'>
-                        <li className='active'>All</li>
-                        <li>Recommended</li>
-                        <li>Beach</li>
-                        <li>Urban</li>
-                        <li>Nature</li>
-                        <li>Mountain</li>
-                    </ul>
-                </div>
-                <div className="destinationContainer grid" data-aos='fade-up'>
-                    {!destinations ?
-                        (<p>Loading...</p>) :
-                        (destinations.map(des => {
-                            return (
+                    <div className="destinationContainer grid" data-aos='fade-up'>
+                        {!destinations ?
+                            (<p>Loading...</p>) :
+                            (destinations.map(des => {
+                                return (
 
-                                <div className="singleDestination" key={des.id} data-aos='fade-up'>
-                                    <div className="imgDiv" >
-                                        <Link to={`/destinations/${des.id}`}>
-                                            <img src={des.image} alt="Destination image" />
-                                        </Link>
-                                        <div className="descInfo flex">
-                                            <div className="text">
-                                                <span className="name">{des.city}</span>
-                                                <p className="flex"><TiLocation className='icon' />{des.country}</p>
+                                    <div className="singleDestination" key={des.id} data-aos='fade-up'>
+                                        <div className="imgDiv" >
+                                            <Link to={`/destinations/${des.id}`}>
+                                                <img src={des.image} alt="Destination image" />
+                                            </Link>
+                                            <div className="descInfo flex">
+                                                <div className="text">
+                                                    <span className="name">{des.city}</span>
+                                                    <p className="flex"><TiLocation className='icon' />{des.country}</p>
+                                                </div>
+                                                <button className="rating" onClick={() => toggleFavorite(des)}>{toggleHeartIcon(des)}</button>
                                             </div>
-                                            <button className="rating" onClick={() => toggleFavorite(des)}>{toggleHeartIcon(des)}</button>
                                         </div>
                                     </div>
-                                </div>
+                                )
+                            })
                             )
-                        })
-                        )
-                    }
+                        }
+                    </div>
+                    <LeafletMap destinations={destinations} />
                 </div>
-                <LeafletMap destinations={destinations}/>
             </div>
-        </div>
-         
-          </>
+
+        </>
     );
 }
 
