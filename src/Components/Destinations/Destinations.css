@@ -39,12 +39,12 @@
 .Destinations .secContainer .secText p {
   font-size: var(--normalFontSize);
 }
-.Destinations .secContainer .searchField {
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 2rem;
+.Destinations .secContainer .searchField .input-group {
+  display: block;
+  justify-content: center;
 }
-.Destinations .secContainer .searchField .inputField {
+.Destinations .secContainer .searchField .input-group .inputField {
+  margin-top: 2rem;
   background: var(--primaryColorLight);
   padding: 1rem;
   border-radius: var(--borderRadius);
@@ -52,16 +52,12 @@
   border: none;
   outline: none;
 }
-.Destinations .secContainer .searchField .inputField input {
+.Destinations .secContainer .searchField .input-group .inputField input {
   background: transparent;
   border: none;
 }
-.Destinations .secContainer .searchField .inputField .icon {
+.Destinations .secContainer .searchField .input-group .inputField .icon {
   color: var(--blackColor);
-}
-.Destinations .secContainer .searchField .btn {
-  gap: 0.5rem;
-  justify-content: center;
 }
 .Destinations .secContainer .secMenu {
   display: none;
@@ -134,6 +130,10 @@
 }
 
 @media screen and (min-width: 640px) {
+  .Destinations .secContainer .searchField .input-group {
+    display: flex;
+    gap: 2rem;
+  }
   .Destinations .secContainer .secMenu {
     display: block;
   }

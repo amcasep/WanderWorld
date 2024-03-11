@@ -23,10 +23,10 @@
 
 .Destinations {
     padding-top: 150px;
+
     .secContainer {
         .secText {
             text-align: center;
-            // font-weight: 700;
             color: var(--blackColor);
             display: grid;
             gap: 0.7rem;
@@ -48,37 +48,28 @@
         }
 
         .searchField {
-            justify-content: space-between;
-            gap: 1rem;
-            margin-top: 2rem;
-
-           
-            .inputField {
-                background: var(--primaryColorLight);
-                padding: 1rem;
-                border-radius: var(--borderRadius);
-                gap: .5rem;
-                border: none;
-                outline: none;
-               
-                input {
-                    background: transparent;
-                    border: none;
-                    // outline: none;
-                    // width: 100%;
-                }
-
-                .icon {
-                    color: var(--blackColor);
-                }
-            }
-
-            .btn {
-                gap: .5rem;
-                // margin: auto;
-                // width: 100%;
-                // align-items: center;
+            .input-group {
+                display: block;
                 justify-content: center;
+
+                .inputField {
+                    margin-top: 2rem;
+                    background: var(--primaryColorLight);
+                    padding: 1rem;
+                    border-radius: var(--borderRadius);
+                    gap: .5rem;
+                    border: none;
+                    outline: none;
+
+                    input {
+                        background: transparent;
+                        border: none;
+                    }
+
+                    .icon {
+                        color: var(--blackColor);
+                    }
+                }
             }
         }
 
@@ -96,9 +87,11 @@
                 overflow: hidden;
                 border-radius: 1rem;
                 height: 260px;
+
                 button {
                     cursor: pointer;
                 }
+
                 .imgDiv {
                     position: relative;
                     height: 100%;
@@ -175,6 +168,13 @@
 @media screen and (min-width: 640px) {
     .Destinations {
         .secContainer {
+            .searchField {
+                .input-group {
+                    display: flex;
+                    gap: 2rem;
+                }
+            }
+
             .secMenu {
                 display: block;
 
@@ -194,17 +194,13 @@
                             color: var(--blackColor);
                             cursor: pointer;
                             border: 1.5px dashed transparent;
+
                             &:hover {
                                 color: var(--primaryColor);
                                 border: 1.5px dashed var(--primaryColor);
                             }
                         }
                     }
-                    // .active {
-                    //     color: var(--primaryColor);
-                    //     border: 1.5px dashed var(--primaryColor);
-                    //       border-radius: var(--borderRadius);
-                    // }
                 }
             }
         }
@@ -229,25 +225,30 @@
     .Destinations {
         .secContainer {
             .secText {
-                .redText{
-                    font-size: var(--h2FontSize);                    
+                .redText {
+                    font-size: var(--h2FontSize);
                 }
+
                 h3 {
                     font-size: var(--biggestFontSize);
                 }
-                p{
+
+                p {
                     font-size: var(--h3FontSize);
                 }
             }
+
             .searchField {
                 grid-template-columns: repeat(4, 1fr);
             }
+
             .destinationContainer {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
     }
 }
+
 @media screen and (min-width: 1400px) {
     .Destinations {
         .secContainer {

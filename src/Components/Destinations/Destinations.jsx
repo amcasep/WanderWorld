@@ -74,7 +74,7 @@ const Destinations = () => {
     const filterDestinationsByType = (type) => {
         const filtered = originalDestinations.filter((dest) => dest.destinationType === type);
         setDestinations(filtered);
-      };
+    };
 
     // Toggle destinations to favorites 
 
@@ -108,21 +108,23 @@ const Destinations = () => {
                         <h3 >Find your dream destination</h3>
                         <p>Fill in the fields below to find the best spot for your next tour</p>
                     </div>
-                    <div className="searchField flex">
-                        <div className="inputField flex SearchBar">
-                            <BiSearchAlt className='icon' />
-                            <input type="search" placeholder='Search...' onChange={(e) => handleChange(e.target.value)} value={input} />
+                    <div className="searchField ">
+                        <div className='input-group'>
+                            <div className="inputField flex SearchBar">
+                                <BiSearchAlt className='icon' />
+                                <input type="search" placeholder='Search...' onChange={(e) => handleChange(e.target.value)} value={input} />
+                            </div>
+                            <select className="inputField" onChange={filterDestinations}>
+                                <option value="DEFAULT">Select Continent/Country</option>
+                                <option value="all">All destinations</option>
+                                <option value="North America">North America</option>
+                                <option value="South America">South America</option>
+                                <option value="Europe">Europe</option>
+                                <option value="Africa">Africa</option>
+                                <option value="Asia">Asia</option>
+                                <option value="Australia">Australia</option>
+                            </select>
                         </div>
-                        <select className="inputField" onChange={filterDestinations}>
-                            <option value="DEFAULT">Select Continent/Country</option>
-                            <option value="all">All destinations</option>
-                            <option value="North America">North America</option>
-                            <option value="South America">South America</option>
-                            <option value="Europe">Europe</option>
-                            <option value="Africa">Africa</option>
-                            <option value="Asia">Asia</option>
-                            <option value="Australia">Australia</option>
-                        </select>
                         <div className="secMenu" >
                             <ul className='flex'>
                                 <li className='active'><button onClick={displayAllDestinations}>All</button></li>
