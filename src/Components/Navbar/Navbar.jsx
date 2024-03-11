@@ -27,7 +27,7 @@ const Navbar = () => {
                 <ul>
                     <li className="navList"><a href="/">Home</a></li>
                     <li className="navList"><a href="/destinations">Destinations</a></li>
-                    <li className="navList"><a href="/destinations/favorites">Favorites</a></li>
+                    <li className="navList"><a href="/favorites">Favorites</a></li>
                 </ul>
                 {/* Icon to remove navbar */}
                 <AiFillCloseCircle className="closeIcon" onClick={removeNavBar} />

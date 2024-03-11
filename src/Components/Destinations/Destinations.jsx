@@ -1,7 +1,4 @@
 import './Destinations.css'
-import { MdLocationPin } from "react-icons/md";
-import { BsFillCreditCardFill } from "react-icons/bs";
-import { BsFillCalendarDateFill } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { TiLocation } from "react-icons/ti";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -9,7 +6,6 @@ import { IoHeart } from "react-icons/io5";
 
 import { useEffect, useState } from 'react';
 import axios from "axios"
-import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { Link } from 'react-router-dom';
 import LeafletMap from '../LeafletMap/LeafletMap';
@@ -20,6 +16,7 @@ const Destinations = () => {
 
     const [destinations, setDestinations] = useState([]);
     const [originalDestinations, setOriginalDestinations] = useState([]);
+    const [favorites, setFavorites] = useState([])
 
     const displayAllDestinations = () => {
         axios.get(API_URL + '/destinations')
@@ -76,20 +73,50 @@ const Destinations = () => {
         setDestinations(filtered);
     };
 
-    // Toggle destinations to favorites 
+    // Display favorites when mounting destinations + Toggle destinations to favorites 
 
-    const [favorites, setFavorites] = useState([])
+    const displayFavorites = () => {
+        axios.get(API_URL + '/favorites')
+            .then((response) => {
+                setFavorites(response.data);
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+    }
+    useEffect(() => {
+        displayFavorites()
+    }, []);
+
 
     const toggleFavorite = (destination) => {
 
         if (!favorites.map((fav) => fav.id).includes(destination.id)) {
-            setFavorites([...favorites, destination]);
+
+            axios
+                .post(API_URL + '/favorites', destination)
+                .then(() => {
+                    setFavorites([...favorites, destination]);
+                })
+                .catch(error => {
+                    console.error('Error adding destination to favorites:', error);
+                });
         }
         else {
-            setFavorites(favorites.filter((fav) => fav.id !== destination.id));
+            axios
+                .delete(API_URL + `/favorites/${destination.id}`)
+                .then((res) => {
+                    setFavorites(favorites.filter((fav) => fav.id !== destination.id));
+                    console.log(res)
+                })
+                .catch(error => {
+                    console.error('Error removing destination from favorites:', error);
+                });
         }
-        toggleHeartIcon()
+        toggleHeartIcon(destination)
     };
+
+
     console.log(favorites)
 
     // Toggle destination button 
@@ -132,7 +159,6 @@ const Destinations = () => {
                                 <li><button onClick={() => filterDestinationsByType('beach')}>Beach</button></li>
                                 <li><button onClick={() => filterDestinationsByType('urban')}>Urban</button></li>
                                 <li><button onClick={() => filterDestinationsByType('nature')}>Nature</button></li>
-                                {/* <li><button onClick={() => filterDestinationsByType('mountain')}>Mountain</button></li> */}
                             </ul>
                         </div>
                     </div>
