@@ -2,6 +2,9 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./LeafletMap.css"
 import { Link } from "react-router-dom";
+import "leaflet/dist/images/marker-icon.png";
+import "leaflet/dist/images/marker-icon-2x.png";
+import "leaflet/dist/images/marker-shadow.png";
 
 const LeafletMap = ({ destinations }) => {
     const paris = [48.86314634052172, 2.2941632958970226];
