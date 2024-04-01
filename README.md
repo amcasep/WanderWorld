@@ -16,7 +16,7 @@ HTML | CSS | SASS | JS | REACT | VITE | JSON
  
   https://openweathermap.org/ (Being able to display the weather in every city) <br>
  
-  https://cloudinary.com/ (Being ablo to upload and store pictures when editing destinations)
+  https://cloudinary.com/ (Being able to upload and store pictures when editing destinations)
  </li>
 </ul>
 
