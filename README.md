@@ -1,8 +1,7 @@
-# React + Vite
+<h2>WanderWorld</h2>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple web application that allows users to create, read, update and delete travelling destinations around the world.
+Check it out <a href="https://waanderworld.netlify.app/">here</a>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>Technologies</h2>
+HTML | CSS | SASS | JS | REACT | VITE | JSON
