@@ -7,11 +7,6 @@ You can save your favourites destinations on a favorites list and in every desti
 It utilizes a JSON file as its data source to perform operations.
 
 Check it out <a href="https://waanderworld.netlify.app/">here!</a> :) 
- <h2>Features</h2>
-Create: Add new items to the JSON data.<br>
-Read: Display the existing items fetched from the JSON data.<br>
-Update: Edit and update existing items in the JSON data.<br>
-Delete: Remove items from the JSON data.
 
 <h2>Technologies</h2>
 HTML | CSS | SASS | JS | REACT | VITE | JSON
